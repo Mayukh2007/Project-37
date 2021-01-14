@@ -24,12 +24,13 @@ class Food {
 
     display() {
         
-
+        if (gameState==="Hungry") {
     var x = 80, y = 180;
     imageMode(CENTER);
     image(this.image, 180, 450, 70, 70);
+    
 
-    if(this.foodStock != 0) {
+        if(this.foodStock != 0) {
         for(var i = 0; i < this.foodStock; i++) {
             if(i % 16 == 0) {
                 x = 50;
@@ -37,26 +38,30 @@ class Food {
             }
             image(this.image, x, y, 50, 50);
             x=x+30;
-        }
+        }   
     }
+}
+    
+    if (gameState==="Hungry"){
     textSize(20);
     fill("snow");
     if(fedTime >= 12) {
-        text("Last Fed: " + fedTime%12 + " PM", 650, 30);
+        text("Last Fed: " + fedTime%12 + " PM", 350, 30);
       }
       else if(fedTime == 0) {
         text("Last Fed: 12 AM", 350, 30);
       }
       else{
-        text("Last Fed: " + fedTime + " AM", 650, 30);
+        text("Last Fed: " + fedTime + " AM", 350, 30);
       }
+    }
 }
 bedroom(){
     background(bedroom,550,550);  
   }
   
 garden(){
-    background(garden);  
+    background(garden,550,550);  
   } 
   
 washroom(){

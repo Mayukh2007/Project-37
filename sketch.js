@@ -72,7 +72,8 @@ function draw() {
    if(gameState!="Hungry"){
      feed.hide();
      add.hide();
-     dog.remove();     
+     dog.remove();   
+      
    }else{
     feed.show();
     add.show();
@@ -80,12 +81,14 @@ function draw() {
    }
   
   drawSprites();
+  if (gameState==="Hungry"){
   textSize(24);
   fill("snow");
   text("Press the Button to Feed the dog Lucky!", 30, 90);
 
   textSize(20);
   text("Food Left: " + foodS, 30, 40);
+  }
   
 
 }
